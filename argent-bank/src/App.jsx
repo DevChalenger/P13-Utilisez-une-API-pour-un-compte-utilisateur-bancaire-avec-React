@@ -8,21 +8,25 @@ import {
 //Components
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Dashboard from "./pages/Profile";
 
 //Pages
 import Home from "./pages/Home";
-import SignIn from "./pages/SignIn";
+import SignIn from "./pages/Profile";
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Navigation>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<SignIn />} />
-      </Navigation>
-      <Footer />
-    </Router>
+    <div className="App">
+      <Router>
+        <Header />
+        <Navigation>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/user" element={<Dashboard />} />
+        </Navigation>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
