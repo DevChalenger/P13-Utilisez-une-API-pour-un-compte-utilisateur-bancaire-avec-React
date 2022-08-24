@@ -1,0 +1,28 @@
+.app-header .app-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+.app-header .app-nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+.app-header .app-nav a.router-link-exact-active {
+  color: #42b983;
+}
+.app-header .app-nav .app-logo {
+  display: flex;
+  align-items: center;
+}
+.app-header .app-nav .app-logo .app-logo-image {
+  max-width: 100%;
+  width: 200px;
+}
+.app-header .app-nav .app-nav-block-items .app-nav-item {
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+.app-header .app-nav .app-nav-block-items .app-nav-item:hover {
+  text-decoration: underline;
+}
