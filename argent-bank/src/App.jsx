@@ -8,11 +8,11 @@ import {
 //Components
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Dashboard from "./pages/Profile";
 
 //Pages
 import Home from "./pages/Home";
-import SignIn from "./pages/Profile";
+import SignIn from "./pages/SignIn";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -22,7 +22,8 @@ function App() {
         <Navigation>
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<SignIn />} />
-          <Route path="/user" element={<Dashboard />} />
+          <Route path="/user" element={<Profile />} />
+          <Route path="*" element={""} />
         </Navigation>
         <Footer />
       </Router>
