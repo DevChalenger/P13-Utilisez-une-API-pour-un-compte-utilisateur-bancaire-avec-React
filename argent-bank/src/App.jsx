@@ -22,7 +22,7 @@ function App() {
         <Navigation>
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<SignIn />} />
-          <Route path="/user" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={""} />
         </Navigation>
         <Footer />

@@ -9,11 +9,11 @@ const initialState = {
 };
 
 const { actions, reducer } = createSlice({
-  name: "user",
+  name: "login",
   initialState,
   reducers: {
     ...statusReducer,
-    clearData: () => {
+    logout: () => {
       return initialState;
     },
   },
