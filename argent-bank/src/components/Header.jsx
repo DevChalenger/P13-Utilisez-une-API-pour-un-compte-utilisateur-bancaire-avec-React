@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/css/header.css";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogout } from "../redux/features/logout.action";
+import { userLogout } from "../redux/features/actions/logout";
 
 function Header() {
   const dispatch = useDispatch();

@@ -1,8 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import userReducer from "./features/user.reducer";
-import loginReducer from "./features/login.reducer";
+import userReducer from "./features/reducers/user";
+import loginReducer from "./features/reducers/login";
 import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
+import { persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage/";
 import thunk from "redux-thunk";
 
 const reducers = combineReducers({

@@ -1,4 +1,5 @@
-.sign-in-content {
+.sign-in-content,
+.sign-up-content {
   box-sizing: border-box;
   background-color: white;
   width: 300px;
@@ -6,29 +7,36 @@
   margin-top: 3rem;
   padding: 2rem;
 }
-.sign-in-content .sign-in-icon {
-  font-size: 5rem;
+.sign-in-content .sign-in-icon,
+.sign-up-content .sign-in-icon {
+  font-size: 5em;
 }
-.sign-in-content .input-wrapper {
+.sign-in-content form .input-wrapper,
+.sign-up-content form .input-wrapper {
   display: flex;
   flex-direction: column;
   text-align: left;
   margin-bottom: 1rem;
 }
-.sign-in-content .input-wrapper label {
+.sign-in-content form .input-wrapper label,
+.sign-up-content form .input-wrapper label {
   font-weight: bold;
 }
-.sign-in-content .input-wrapper input {
+.sign-in-content form .input-wrapper input,
+.sign-up-content form .input-wrapper input {
   padding: 5px;
   font-size: 1.2rem;
 }
-.sign-in-content .input-remember {
+.sign-in-content form .input-remember,
+.sign-up-content form .input-remember {
   display: flex;
 }
-.sign-in-content .input-remember label {
+.sign-in-content form .input-remember label,
+.sign-up-content form .input-remember label {
   margin-left: 0.25rem;
 }
-.sign-in-content .sign-in-button {
+.sign-in-content form .sign-in-button,
+.sign-up-content form .sign-in-button {
   display: block;
   width: 100%;
   padding: 8px;
@@ -38,4 +46,42 @@
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+}
+.sign-in-content .sign-up-link-block,
+.sign-in-content .sign-in-link-block,
+.sign-up-content .sign-up-link-block,
+.sign-up-content .sign-in-link-block {
+  margin-top: 10px;
+}
+.sign-in-content .sign-up-link-block .sign-up-link,
+.sign-in-content .sign-up-link-block .sign-in-link,
+.sign-in-content .sign-in-link-block .sign-up-link,
+.sign-in-content .sign-in-link-block .sign-in-link,
+.sign-up-content .sign-up-link-block .sign-up-link,
+.sign-up-content .sign-up-link-block .sign-in-link,
+.sign-up-content .sign-in-link-block .sign-up-link,
+.sign-up-content .sign-in-link-block .sign-in-link {
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.sign-in-content .sign-up-link-block .sign-up-link:visited,
+.sign-in-content .sign-up-link-block .sign-in-link:visited,
+.sign-in-content .sign-in-link-block .sign-up-link:visited,
+.sign-in-content .sign-in-link-block .sign-in-link:visited,
+.sign-up-content .sign-up-link-block .sign-up-link:visited,
+.sign-up-content .sign-up-link-block .sign-in-link:visited,
+.sign-up-content .sign-in-link-block .sign-up-link:visited,
+.sign-up-content .sign-in-link-block .sign-in-link:visited {
+  color: inherit;
+}
+.sign-in-content .sign-up-link-block .sign-up-link:hover,
+.sign-in-content .sign-up-link-block .sign-in-link:hover,
+.sign-in-content .sign-in-link-block .sign-up-link:hover,
+.sign-in-content .sign-in-link-block .sign-in-link:hover,
+.sign-up-content .sign-up-link-block .sign-up-link:hover,
+.sign-up-content .sign-up-link-block .sign-in-link:hover,
+.sign-up-content .sign-in-link-block .sign-up-link:hover,
+.sign-up-content .sign-in-link-block .sign-in-link:hover {
+  filter: contrast(1.5);
 }

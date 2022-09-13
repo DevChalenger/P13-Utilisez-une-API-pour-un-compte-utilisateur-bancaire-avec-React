@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { statusReducer } from "./status.reducer";
+import { statusReducer } from "./status";
 
 const initialState = {
   status: "void",
@@ -19,6 +19,6 @@ const { actions, reducer } = createSlice({
   },
 });
 
-export const { pending, rejected, resolved, logout } = actions;
+export const { pending, rejected, resolved, clearData } = actions;
 
 export default reducer;

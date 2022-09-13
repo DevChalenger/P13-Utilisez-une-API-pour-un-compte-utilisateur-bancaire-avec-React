@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { statusReducer } from "./status.reducer";
+import { statusReducer } from "./status";
 
 const initialState = {
   status: "void",

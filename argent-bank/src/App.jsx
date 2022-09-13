@@ -13,6 +13,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/register" element={<SignUp />}></Route>
           <Route path="*" element={""} />
         </Navigation>
         <Footer />

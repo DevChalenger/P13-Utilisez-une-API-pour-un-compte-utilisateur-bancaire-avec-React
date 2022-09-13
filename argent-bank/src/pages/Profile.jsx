@@ -5,7 +5,7 @@ import AccountHeader from "../components/AccountHeader";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { userGetData } from "../redux/features/user.action";
+import { userGetData } from "../redux/features/actions/user";
 
 function Profile() {
   const accountData = dataAccount.dataAccount;
@@ -16,13 +16,16 @@ function Profile() {
   const token = dataLogin.data;
 
   useEffect(() => {
-    if (!dataLogin.data) {
-      navigate("/login");
+    if (!token) {
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } else {
       dispatch(userGetData(token));
     }
-  });
-  return (
+  }, [dispatch, token, navigate]);
+
+  return token ? (
     <main className="main bg-dark account-container">
       <AccountHeader />
       <h2 className="sr-only">Accounts</h2>
@@ -35,6 +38,15 @@ function Profile() {
           description={account.accountDescription}
         />
       ))}
+    </main>
+  ) : (
+    <main className="main bg-dark account-container">
+      <div className="account-block-error">
+        <p>
+          Vous n'êtes pas autoriser à accéder à cette page vous aller être
+          redirigé vers la page de connection
+        </p>
+      </div>
     </main>
   );
 }
