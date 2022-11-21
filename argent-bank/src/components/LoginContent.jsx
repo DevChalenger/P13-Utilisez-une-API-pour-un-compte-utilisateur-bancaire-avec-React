@@ -12,7 +12,7 @@ function LoginContent() {
   const dispatch = useDispatch();
   const [invalidForm, setInvalidForm] = useState(false);
   const { register, handleSubmit } = useForm();
-  const { data, error } = useSelector((state) => selectLogin(state));
+  const { data, error } = useSelector(selectLogin);
 
   useEffect(() => {
     if (data) {
@@ -34,6 +34,7 @@ function LoginContent() {
       return JSON.parse(JSON.stringify(error.message));
     }
   };
+
   return (
     <section className="sign-in-content">
       <FontAwesomeIcon icon={faUserCircle} className="sign-in-icon" />
@@ -50,7 +51,9 @@ function LoginContent() {
           />
           {invalidForm && error ? (
             error.message === "Error: User not found!" ? (
-              <div className="input-error">{errorMessage()}</div>
+              <div className="input-error">
+                <p>{errorMessage()}</p>
+              </div>
             ) : (
               ""
             )

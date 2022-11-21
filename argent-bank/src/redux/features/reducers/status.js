@@ -1,6 +1,6 @@
 export const PENDING = "pending";
 export const VOID = "void";
-export const UPDATING = "updating";
+
 export const RESOLVED = "resolved";
 export const REJECTED = "rejected";
 
@@ -17,7 +17,7 @@ export const statusReducer = {
         draft.loading = true;
         return;
       case RESOLVED:
-        draft.status = UPDATING;
+        draft.status = PENDING;
         draft.loading = true;
         return;
       default:
@@ -27,7 +27,7 @@ export const statusReducer = {
 
   resolved: (draft, action) => {
     switch (draft.status) {
-      case PENDING || UPDATING:
+      case PENDING:
         draft.data = action.payload;
         draft.status = RESOLVED;
         draft.loading = false;
@@ -39,7 +39,7 @@ export const statusReducer = {
 
   rejected: (draft, action) => {
     switch (draft.status) {
-      case PENDING || UPDATING:
+      case PENDING:
         draft.status = REJECTED;
         draft.error = action.payload;
         draft.data = null;

@@ -13,12 +13,19 @@ const { actions, reducer } = createSlice({
   initialState,
   reducers: {
     ...statusReducer,
+
     clearData: () => {
       return initialState;
+    },
+
+    UPDATE_PROFILE: (draft, action) => {
+      draft.data = action.payload;
+      return;
     },
   },
 });
 
-export const { pending, rejected, resolved, clearData } = actions;
+export const { pending, rejected, resolved, clearData, UPDATE_PROFILE } =
+  actions;
 
 export default reducer;

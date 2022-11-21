@@ -2,34 +2,31 @@ import AccountContent from "../components/AccountContent";
 import dataAccount from "../__mocks__/dataAccount.json";
 import "../styles/css/profile.css";
 import AccountHeader from "../components/AccountHeader";
-import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { userGetData } from "../redux/features/actions/user";
+
+import { selectLogin } from "../redux/selectors";
 
 function Profile() {
-  const accountData = dataAccount.dataAccount;
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const getDataStorage = JSON.parse(localStorage.getItem("persist:root"));
-  const dataLogin = JSON.parse(getDataStorage.login);
-  const token = dataLogin.data;
+
+  const { status, data } = useSelector(selectLogin);
 
   useEffect(() => {
-    if (!token) {
+    if (!data) {
       setTimeout(() => {
         navigate("/login");
       }, 2000);
-    } else {
-      dispatch(userGetData(token));
+      return;
     }
-  }, [dispatch, token, navigate]);
+  }, [data, navigate]);
 
-  return token ? (
+  return status === "resolved" ? (
     <main className="main bg-dark account-container">
       <AccountHeader />
       <h2 className="sr-only">Accounts</h2>
-      {accountData.map((account) => (
+      {dataAccount.map((account) => (
         <AccountContent
           key={account.accountType.accountTitle}
           title={account.accountType.accountTitle}
@@ -39,15 +36,23 @@ function Profile() {
         />
       ))}
     </main>
-  ) : (
+  ) : status === "rejected" || status === "void" ? (
     <main className="main bg-dark account-container">
       <div className="account-block-error">
         <p>
-          Vous n'êtes pas autoriser à accéder à cette page vous aller être
-          redirigé vers la page de connection
+          You are not authorized to access this page you will be redirected to
+          login page
         </p>
       </div>
     </main>
+  ) : status === "pending" ? (
+    <main className="main bg-dark account-container">
+      <div className="account-block-error">
+        <p>Loading...</p>
+      </div>
+    </main>
+  ) : (
+    ""
   );
 }
 

@@ -1,23 +1,22 @@
-import { PENDING, UPDATING } from "../reducers/status";
-import { selectLogin } from "../../selectors";
-/* import { pending, resolved, rejected } from "../reducers/login"; */
+import { PENDING } from "../reducers/status";
+import { selectSignup } from "../../selectors";
+import { pending, resolved, rejected } from "../reducers/signup";
 import instance from "./baseApi";
 
-export function userLogin(formValue) {
+export function userSignup(formValue) {
   return async (dispatch, getState) => {
-    const status = selectLogin(getState()).status;
-    if (status === PENDING || status === UPDATING) {
+    const status = selectSignup(getState()).status;
+    if (status === PENDING) {
       return;
     }
-    /*     dispatch(pending()); */
+    dispatch(pending());
     try {
       const response = await instance.post("signup", formValue);
-      /*    const data = await response.data.body;
+      const data = await response.data.body;
 
-      dispatch(resolved(data)); */
+      dispatch(resolved(data));
     } catch (error) {
-      /*      dispatch(rejected(error.response.data));
-      console.log(error.response.data); */
+      dispatch(rejected(error.response.data));
     }
   };
 }

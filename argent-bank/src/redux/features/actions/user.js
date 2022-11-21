@@ -1,13 +1,13 @@
-import { PENDING, UPDATING } from "../reducers/status";
-import { selectLogin } from "../../selectors";
+import { PENDING } from "../reducers/status";
+import { selectUser } from "../../selectors";
 import { pending, resolved, rejected } from "../reducers/user";
 import instance from "./baseApi";
 
 export function userGetData(token) {
   return async (dispatch, getState) => {
-    const status = selectLogin(getState()).status;
+    const status = selectUser(getState()).status;
 
-    if (status === PENDING || status === UPDATING) {
+    if (status === PENDING) {
       return;
     }
 
@@ -19,7 +19,11 @@ export function userGetData(token) {
     try {
       const response = await instance.post("profile", {}, { headers });
       const data = await response.data.body;
-      dispatch(resolved(data));
+      const objectUser = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+      };
+      dispatch(resolved(objectUser));
     } catch (error) {
       dispatch(rejected(error));
     }

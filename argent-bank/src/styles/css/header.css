@@ -19,10 +19,17 @@
   max-width: 100%;
   width: 200px;
 }
+.app-header .app-nav .app-nav-block-items {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
 .app-header .app-nav .app-nav-block-items .app-nav-item {
-  text-decoration: none;
-  margin-right: 0.5rem;
+  margin-left: 5px;
+}
+.app-header .app-nav .app-nav-block-items .app-nav-item .nav-icon-name {
+  margin: 0px 5px;
 }
 .app-header .app-nav .app-nav-block-items .app-nav-item:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }

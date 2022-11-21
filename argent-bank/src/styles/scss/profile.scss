@@ -2,6 +2,39 @@
   .account-header {
     color: #fff;
     margin-bottom: 2rem;
+    .update-user-form {
+      .input-update {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0em 0.5em;
+        .input-control {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          input {
+            height: 25px;
+            width: 125px;
+            margin: 0px 10px;
+            padding: 5px;
+            outline: none;
+            border: 2px solid rgba($color: rgb(120, 120, 120), $alpha: 0.8);
+            border-radius: 0.2em;
+          }
+          .input-error {
+            width: 125px;
+          }
+        }
+        margin-bottom: 10px;
+      }
+      .button-update {
+        button {
+          width: 100px;
+          margin: 0 10px;
+          padding: 5px 10px;
+        }
+      }
+    }
     .edit-button {
       border-color: #00bc77;
       background-color: #00bc77;

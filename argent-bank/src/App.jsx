@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -15,7 +15,21 @@ import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
 import SignUp from "./pages/SignUp";
 
+//Redux
+import { userGetData } from "./redux/features/actions/user";
+import { selectLogin } from "./redux/selectors";
+import { useDispatch, useSelector } from "react-redux";
+
 function App() {
+  const { status, data } = useSelector(selectLogin);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (status === "resolved") {
+      dispatch(userGetData(data));
+    }
+  }, [data, dispatch, status]);
+
   return (
     <div className="App">
       <Router>

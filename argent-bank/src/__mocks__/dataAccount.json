@@ -1,28 +1,26 @@
-{
-  "dataAccount": [
-    {
-      "accountType": {
-        "accountTitle": "Argent Bank Checking",
-        "accountId": 8349
-      },
-      "accountAmount": 2082.79,
-      "accountDescription": "Available Balance"
+[
+  {
+    "accountType": {
+      "accountTitle": "Argent Bank Checking",
+      "accountId": 8349
     },
-    {
-      "accountType": {
-        "accountTitle": "Argent Bank Savings",
-        "accountId": 6712
-      },
-      "accountAmount": "$10,928.42",
-      "accountDescription": "Available Balance"
+    "accountAmount": 2082.79,
+    "accountDescription": "Available Balance"
+  },
+  {
+    "accountType": {
+      "accountTitle": "Argent Bank Savings",
+      "accountId": 6712
     },
-    {
-      "accountType": {
-        "accountTitle": "Argent Bank Credit Card",
-        "accountId": 8349
-      },
-      "accountAmount": 184.30,
-      "accountDescription": "Current Balance"
-    }
-  ]
-}
+    "accountAmount": "$10,928.42",
+    "accountDescription": "Available Balance"
+  },
+  {
+    "accountType": {
+      "accountTitle": "Argent Bank Credit Card",
+      "accountId": 8349
+    },
+    "accountAmount": 184.30,
+    "accountDescription": "Current Balance"
+  }
+]
