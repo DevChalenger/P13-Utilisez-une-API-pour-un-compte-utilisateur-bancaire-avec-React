@@ -4,7 +4,7 @@
       "accountTitle": "Argent Bank Checking",
       "accountId": 8349
     },
-    "accountAmount": 2082.79,
+    "accountAmount": "$2082.79",
     "accountDescription": "Available Balance"
   },
   {
@@ -20,7 +20,7 @@
       "accountTitle": "Argent Bank Credit Card",
       "accountId": 8349
     },
-    "accountAmount": 184.30,
+    "accountAmount": "$184.30",
     "accountDescription": "Current Balance"
   }
 ]

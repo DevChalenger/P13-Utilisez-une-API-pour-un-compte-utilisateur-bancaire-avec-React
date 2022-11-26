@@ -12,12 +12,14 @@ function AccountHeader() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+
   const { data } = useSelector(selectUser);
   const token = useSelector(selectLogin).data;
 
